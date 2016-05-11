@@ -32,6 +32,6 @@ class DocumentorController extends Controller
         return view('documentor::index')
           ->withDocuments($documents)
           ->withProject(config('documentor.settings.project_name'))
-          ->Prefix(config('documentor.settings.prefix'));
+          ->withPrefix(config('documentor.settings.prefix'));
     }
 }
