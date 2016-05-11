@@ -22,7 +22,7 @@ class DocumentorServiceProvider extends ServiceProvider
         ], 'public');
         $this->publishes([
             __DIR__.'/config/settings.php' => config_path('documentor/settings.php'),
-        ]);
+        ], 'config');
         $this->mergeConfigFrom(__DIR__.'/config/settings.php', 'documentor.settings');
     }
 
