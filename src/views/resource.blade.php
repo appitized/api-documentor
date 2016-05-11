@@ -57,7 +57,7 @@
         <div class="resource__area__example">
             <div class="resource__area__padding">
                 <div class="endpoint">
-                    <pre><code><p class="endpoint__url"><span>{{ $resource['method'] }}</span>{{ url('') }}{{ $endpoint }}</p></code></pre>
+                    <pre><code><p class="endpoint__url"><span>{{ $resource['method'] }}</span>{{ url($prefix) }}{{ $endpoint }}</p></code></pre>
                 </div>
                 @if(isset($resource['curl']))
                     <div class="curl">

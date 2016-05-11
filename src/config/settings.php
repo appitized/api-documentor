@@ -2,6 +2,7 @@
 
 return [
     'document_path' => public_path() . '/documentation',
-    'project_name' => '4Sight',
-    'logo_url' => ''
+    'project_name' => '',
+    'logo_url' => '',
+    'prefix' => '',
 ];

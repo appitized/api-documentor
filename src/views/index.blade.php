@@ -44,7 +44,7 @@
                     <div class="resource__area__padding">
                         <div class="endpoint">
                             <h4>API Endpoint</h4>
-                            <pre><code><p class="endpoint__url">{{ url('/api/v1') }}</p></code></pre>
+                            <pre><code><p class="endpoint__url">{{ url($prefix) }}</p></code></pre>
                         </div>
                     </div>
 
