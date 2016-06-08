@@ -1,4 +1,4 @@
-<section class="resource" id="{{ snake_case($endpoint) }}">
+<section class="resource" id="{{ $href }}">
     <div class="resource__area">
         <div class="resource__area__copy">
             <div class="resource__area__padding">

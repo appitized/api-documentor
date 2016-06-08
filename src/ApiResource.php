@@ -8,9 +8,14 @@ class ApiResource
     {
         return [
           'resource' => $resource,
-          'href' => $this->explode_endpoint($endpoint),
+          'href' => snake_case($endpoint),
           'endpoint' => $this->explode_endpoint($endpoint)
         ];
+    }
+
+    public function getHref($endpoint)
+    {
+        return snake_case($this->explode_endpoint($endpoint));
     }
 
     protected function explode_endpoint($endpoint)

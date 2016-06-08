@@ -1,5 +1,5 @@
 @extends('documentor::layout')
-@inject('resource', 'Appitized\Documentor\ApiResource')
+@inject('api_resource', 'Appitized\Documentor\ApiResource')
 
 @section('content')
     @include('documentor::navigation.nav')
@@ -44,7 +44,7 @@
                         <div class="resource__area__example"></div>
                     </div>
                     @foreach($value['resources'] as $endpoint => $resource)
-                        @include('documentor::resource', $resource->createResource($endpoint, $resource))
+                        @include('documentor::resource', $api_resource->createResource($endpoint, $resource))
                     @endforeach
                 </div>
             @endforeach
