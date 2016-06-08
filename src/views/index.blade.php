@@ -1,28 +1,8 @@
 @extends('documentor::layout')
+@inject('resource', 'Appitized\Documentor\ApiResource')
 
 @section('content')
-    <div class="nav">
-        <div class="nav__container">
-            <h1>{{ $project }}<span> api</span></h1>
-            @foreach($documents as $key => $value)
-                <div class="resource-group">
-                    <div class="heading">
-                        <h2><a href="#{{ snake_case($key) }}">{{ $key }}</a></h2>
-                    </div>
-                    <div>
-                        <ul>
-                            @foreach($value['resources'] as $key => $resource)
-                                <li><a href="#{{ snake_case($key) }}"><span class="badge post"><i
-                                                    class="fa fa-plus"></i></span>{{ $resource['alias'] or $key }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-
-    </div>
+    @include('documentor::navigation.nav')
 
     <div class="container">
         <div class="background">
@@ -64,7 +44,7 @@
                         <div class="resource__area__example"></div>
                     </div>
                     @foreach($value['resources'] as $endpoint => $resource)
-                        @include('documentor::resource', ['resource' => $resource, 'endpoint' => $endpoint])
+                        @include('documentor::resource', $resource->createResource($endpoint, $resource))
                     @endforeach
                 </div>
             @endforeach
