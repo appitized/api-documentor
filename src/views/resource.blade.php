@@ -3,7 +3,7 @@
         <div class="resource__area__copy">
             <div class="resource__area__padding">
                 <h3>
-                    <span class="method method--{{strtolower($resource['method'])}}">{{$resource['method']}}</span>{{ $endpoint }}
+                    <span class="method method--{{strtolower($resource['method'])}}">{{ strtoupper($resource['method']) }}</span>{{ $endpoint }}
                 </h3>
 
                 <p>{!! nl2br($resource['description']) !!}</p>

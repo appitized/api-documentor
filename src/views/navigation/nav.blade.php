@@ -4,7 +4,7 @@
         <h1>{{ $project }}<span> API</span></h1>
         @foreach($documents as $key => $value)
             <div class="resource-group">
-                <div class="heading"><h2><a href="#{{ snake_case($key) }}">{{ $key }}</a></h2></div>
+                <div class="heading"><h2><a href="#{{ snake_case($key) }}">{{ ucwords($key) }}</a></h2></div>
                 <div>
                     <ul>
                         @foreach($value['resources'] as $key => $resource)
