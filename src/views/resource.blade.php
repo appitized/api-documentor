@@ -57,7 +57,15 @@
         <div class="resource__area__example">
             <div class="resource__area__padding">
                 <div class="endpoint">
-                    <pre><code><p class="endpoint__url"><span>{{ $resource['method'] }}</span>{{ url($prefix) }}{{ $endpoint }}</p></code></pre>
+                    <pre><code>
+                            <p class="endpoint__url"><span>{{ $resource['method'] }}</span>
+                                @if( isset($resource['prefix']) && $resource['prefix'] == true )
+                                    {{ url($prefix) }}{{ $endpoint }}
+                                @else
+                                    {{ url($endpoint) }}
+                                @endif
+                            </p>
+                        </code></pre>
                 </div>
                 @if(isset($resource['curl']))
                     <div class="curl">
@@ -66,11 +74,11 @@
                     </div>
                 @endif
                 @foreach($resource['responses'] as $code => $response)
-                <div class="response">
-                    <h4>Example Response {{ $code }}</h4>
-                    <pre><code>{!! \Appitized\Documentor\ApiHelper::format_json($response['json'], true) !!}</code></pre>
-                </div>
-                    @endforeach
+                    <div class="response">
+                        <h4>Example Response {{ $code }}</h4>
+                        <pre><code>{!! \Appitized\Documentor\ApiHelper::format_json($response['json'], true) !!}</code></pre>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
